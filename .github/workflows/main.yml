@@ -1,0 +1,26 @@
+name: KEITH-MD Bot Runner
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Cloner le dépôt
+        uses: actions/checkout@v4
+
+      - name: 🟢 Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📦 Installer les dépendances
+        run: npm install
+
+      - name: ▶️ Lancer le bot
+        run: npm start
