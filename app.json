@@ -14,13 +14,13 @@
     "baileys-md",
     "md-bot"
   ],
-  "website": "https://github.com/Keithkeizzah/KEITH-MD#readme",
-  "repository": "https://github.com/Keithkeizzah/KEITH-MD.git",
+  "website": "https://,david-mpongo.vercel.app",
+  "repository": "https://github.com/Keithkezzah/KETH-MD.git",
   "logo": "https://i.imgur.com/dAtHp2k.jpeg",
   "success_url": "/",
   "env": {
     "OWNER_NUMBER": {
-      "description": "Put any phone numbers you want to be bot owner without + or spaces \",\" Ex: 254748387615, 254796299159",
+      "description": "Put any phone numbers you want to be bot owner without + or spaces \",\" Ex: 243982697752, 243846064543",
       "required": false
     },
     "SESSION": {
