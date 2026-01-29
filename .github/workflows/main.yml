@@ -4,11 +4,16 @@ on:
   push:
     branches:
       - main
+
   workflow_dispatch:
+
+  schedule:
+    - cron: "0 * * * *"   # ⏰ toutes les heures
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+    timeout-minutes: 55   # évite coupure brutale GitHub
 
     steps:
       - name: 📥 Cloner le dépôt
