@@ -1,4 +1,4 @@
-name: KEITH-MD Bot Auto Deploy (30min)
+name: KEITH-MD Bot Auto Deploy (4h)
 
 on:
   push:
@@ -8,12 +8,12 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: "*/30 * * * *"   # ⏰ toutes les 30 minutes
+    - cron: "0 */4 * * *"   # ⏰ toutes les 4 heures
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 25      # le job s’arrête avant le prochain cron
+    timeout-minutes: 235    # ~3h55 (avant le prochain redéploiement)
 
     steps:
       - name: 📥 Cloner le dépôt
