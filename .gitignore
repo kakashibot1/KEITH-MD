@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Session files
+session/
+
+# Log files
+logs/
+
+# Sensitive files
+.sensitive/
